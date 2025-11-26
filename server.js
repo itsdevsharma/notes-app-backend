@@ -25,6 +25,10 @@ app.use(express.json()); // this middleware allows us to accept json data in bod
 app.use("/api/auth", authRoutes);
 app.use('/api/notes', noteRoutes); // all routes starting with /api/notes will be handled by noteRoutes
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 
 // In server.js, before app.listen
 app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {
