@@ -16,8 +16,11 @@ app.use(cors());
 
 // If you want to restrict (only frontend)
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: "https://notes-app-2-pqy8.onrender.com", // your frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 
 
 app.use(express.json()); // this middleware allows us to accept json data in body
